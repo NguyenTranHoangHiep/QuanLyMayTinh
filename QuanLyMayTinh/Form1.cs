@@ -77,7 +77,6 @@ namespace QuanLyMayTinh
                 textBox2.PasswordChar = '*';
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text;
@@ -89,27 +88,56 @@ namespace QuanLyMayTinh
                 {
                     connection.Open();
 
-                    // Sử dụng câu truy vấn SQL để kiểm tra thông tin đăng nhập từ bảng QuanLy.
-                    string sql = "SELECT COUNT(*) FROM QuanLy WHERE Tk = @Username AND Mk = @Password";
-                    SqlCommand cmd = new SqlCommand(sql, connection);
-                    cmd.Parameters.AddWithValue("@Username", username);
-                    cmd.Parameters.AddWithValue("@Password", password);
-
-                    int count = (int)cmd.ExecuteScalar();
-
-                    if (count > 0)
+                    // Kiểm tra tài khoản trong bảng QuanLy
+                    using (SqlCommand quanLyCommand = new SqlCommand("SELECT 'QuanLy' AS LoaiTaiKhoan FROM QuanLy WHERE Tk = @Username AND Mk = @Password", connection))
                     {
-                        MessageBox.Show("Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // Thực hiện các hành động sau khi đăng nhập ở đây.
-                        Form3 form3= new Form3();
-                        form3.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tài khoản và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        quanLyCommand.Parameters.AddWithValue("@Username", username);
+                        quanLyCommand.Parameters.AddWithValue("@Password", password);
+
+                        object loaiTaiKhoanQuanLy = quanLyCommand.ExecuteScalar();
+
+                        if (loaiTaiKhoanQuanLy != null)
+                        {
+                            MessageBox.Show("Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Mở form QuanLy tương ứng.
+                            Form3 formQuanLy = new Form3();
+                            formQuanLy.Show();
+                            return; // Kết thúc phương thức để không kiểm tra tiếp.
+                        }
                     }
 
-                    connection.Close();
+                    // Kiểm tra tài khoản trong bảng NV
+                    using (SqlCommand nvCommand = new SqlCommand("SELECT LoaiNV FROM NV WHERE Tk = @Username AND Mk = @Password", connection))
+                    {
+                        nvCommand.Parameters.AddWithValue("@Username", username);
+                        nvCommand.Parameters.AddWithValue("@Password", password);
+
+                        object loaiNV = nvCommand.ExecuteScalar();
+
+                        if (loaiNV != null)
+                        {
+                            MessageBox.Show("Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Mở form tương ứng dựa trên giá trị LoaiNV.
+                            string loaiNVStr = loaiNV.ToString();
+                            if (loaiNVStr == "Thủ kho")
+                            {
+                                ThuKho formThuKho = new ThuKho();
+                                formThuKho.Show();
+                            }
+                            else if (loaiNVStr == "Nhân viên")
+                            {
+                                NVBH formNhanVienBanHang = new NVBH();
+                                formNhanVienBanHang.Show();
+                            }
+                            // Các điều kiện khác nếu cần.
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tài khoản và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -118,13 +146,6 @@ namespace QuanLyMayTinh
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form2 form2 = new Form2();
-
-            // Hiển thị Form2
-            form2.Show();
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

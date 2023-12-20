@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +47,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InBill.Designer.cs">
+      <DependentUpon>InBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NVBH_QLKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NVBH_QLKH.Designer.cs">
+      <DependentUpon>NVBH_QLKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLHD.Designer.cs">
+      <DependentUpon>QLHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLMTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLMTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SuaBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaBill.Designer.cs">
+      <DependentUpon>SuaBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
@@ -64,28 +88,161 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="KH.Designer.cs">
+      <DependentUpon>KH.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NVBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NVBH.Designer.cs">
+      <DependentUpon>NVBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDT.Designer.cs">
+      <DependentUpon>QLDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLHHOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLHHOA.Designer.cs">
+      <DependentUpon>QLHHOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaKH.Designer.cs">
+      <DependentUpon>SuaKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaNK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaNK.Designer.cs">
+      <DependentUpon>SuaNK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaNV.Designer.cs">
+      <DependentUpon>SuaNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaSP.Designer.cs">
+      <DependentUpon>SuaSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuaTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaTK.Designer.cs">
+      <DependentUpon>SuaTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemKH.Designer.cs">
+      <DependentUpon>ThemKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemNV.Designer.cs">
+      <DependentUpon>ThemNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QLNV.Designer.cs">
       <DependentUpon>QLNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThemSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemSP.Designer.cs">
+      <DependentUpon>ThemSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemTK.Designer.cs">
+      <DependentUpon>ThemTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThuKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThuKho.Designer.cs">
+      <DependentUpon>ThuKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThêmNK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThêmNK.Designer.cs">
+      <DependentUpon>ThêmNK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TonKho.Designer.cs">
+      <DependentUpon>TonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhapKho.Designer.cs">
+      <DependentUpon>NhapKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XuatKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XuatKho.Designer.cs">
+      <DependentUpon>XuatKho.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="InBill.rdlc" />
+    <EmbeddedResource Include="InBill.resx">
+      <DependentUpon>InBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NVBH_QLKH.resx">
+      <DependentUpon>NVBH_QLKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLHD.resx">
+      <DependentUpon>QLHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaBill.resx">
+      <DependentUpon>SuaBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KH.resx">
+      <DependentUpon>KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NVBH.resx">
+      <DependentUpon>NVBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLDT.resx">
+      <DependentUpon>QLDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLHHOA.resx">
+      <DependentUpon>QLHHOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLNV.resx">
+      <DependentUpon>QLNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,8 +254,50 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLNV.resx">
-      <DependentUpon>QLNV.cs</DependentUpon>
+    <EmbeddedResource Include="SuaKH.resx">
+      <DependentUpon>SuaKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaNK.resx">
+      <DependentUpon>SuaNK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaNV.resx">
+      <DependentUpon>SuaNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaSP.resx">
+      <DependentUpon>SuaSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaTK.resx">
+      <DependentUpon>SuaTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemKH.resx">
+      <DependentUpon>ThemKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemNV.resx">
+      <DependentUpon>ThemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemSP.resx">
+      <DependentUpon>ThemSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemTK.resx">
+      <DependentUpon>ThemTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThuKho.resx">
+      <DependentUpon>ThuKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThêmNK.resx">
+      <DependentUpon>ThêmNK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TonKho.resx">
+      <DependentUpon>TonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapKho.resx">
+      <DependentUpon>NhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XuatKho.resx">
+      <DependentUpon>XuatKho.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,6 +313,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLMTDataSet.xsc">
+      <DependentUpon>QLMTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLMTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLMTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLMTDataSet.xss">
+      <DependentUpon>QLMTDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\profile.png" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +352,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forklift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\material-management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wholesale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electricity-bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

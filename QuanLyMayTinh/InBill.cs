@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyMayTinh
 {
-    public partial class Form2 : Form
+    public partial class InBill : Form
     {
-        public Form2()
+        public InBill()
         {
             InitializeComponent();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

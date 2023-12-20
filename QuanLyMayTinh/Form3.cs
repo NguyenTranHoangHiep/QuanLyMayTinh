@@ -48,7 +48,8 @@ namespace QuanLyMayTinh
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            openchill(new KH());
+            label2.Text = button1.Text;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -64,6 +65,17 @@ namespace QuanLyMayTinh
         private void label1_Click(object sender, EventArgs e)
         {
             label2.Text = "Home";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openchill(new QLDT());
+            label2.Text = button3.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
